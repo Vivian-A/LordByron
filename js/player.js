@@ -1,7 +1,7 @@
 const Scores = {
-    Scandal,
-    Masterpiece,
-    Stress,
+    Scandal : "Scandal",
+    Masterpiece : "Masterpiece",
+    Stress : "Stress",
 }
 const GAME_OVER_MESSAGES = {
     [Scores.Scandal]: "You are no longer fit to enter society and must flee to nurse your reputation.",
