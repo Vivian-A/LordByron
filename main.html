@@ -8,17 +8,24 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="main.css">
+        <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+
 
     </head>
     <body>
-        <script src="js/events.js" async defer></script>
-        <script src="js/player.js" async defer></script>
-        <script src="js/game.js" async defer></script>
+        <script src="js/events.js" defer></script>
+        <script src="js/player.js" defer></script>
+        <script src="js/game.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
     </body>
 
     <div class="container mx-auto p-8">
-        <h1 class="text-3xl font-bold mb-6">Byronic Event Simulator</h1>
-        
+        <h1 class="text-3xl font-bold mb-6">Trapped in a cabin with Lord Byron</h1>
+        <p class="mb-6 p-4 bg-white rounded shadow-md">You are on vacation with Lord Byron in his holiday home, but the weather has trapped you and your friends inside the house.
+            Only the strong will survive.
+        </p>
+        <div id="alert-container" class=""></div>
         <div id="player-stats" class="mb-6 p-4 bg-white rounded shadow-md">
             <h2 class="text-xl font-semibold">Player Stats</h2>
             <p id="scandal" class="mt-2">Scandal: 0</p>
@@ -27,15 +34,9 @@
         </div>
         
         <div class="mb-6 p-4 bg-white rounded shadow-md">
-            <h2 class="text-xl font-semibold">Events</h2>
-            <button onclick="triggerEvent('Drama', 2)" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-                Apply Drama Event 2
-            </button>
-            <button onclick="triggerEvent('Recreation', 4)" class="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
-                Apply Recreation Event 4
-            </button>
-            <button onclick="triggerEvent('Redoubt', 1)" class="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
-                Apply Redoubt Event 1
+            <h2 class="text-xl font-semibold">Actions</h2>
+            <button onclick="rollEvents()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                Go to sleep
             </button>
         </div>
 
