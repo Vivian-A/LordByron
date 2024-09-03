@@ -1,4 +1,7 @@
-
-const byronicEvent = new ByronicEvent();
 const player = new Player();
-byronicEvent.applyEvent('Drama', 2, player);
+const byronicEvent = new ByronicEvent();
+
+
+function triggerEvent(eventType, eventId) {
+    byronicEvent.applyEvent(eventType, eventId, player);
+}

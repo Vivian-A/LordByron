@@ -49,6 +49,11 @@ class Player {
     
     editProperty(propertyName, amount, maxProperty, scoreType) {
         this[propertyName] += amount;
+        if (this[propertyName] < 0)
+        {
+            this[propertyName] = 0;
+        }
+        console.log(this[propertyName])
         if (this[propertyName] >= maxProperty) {
             this.gameOver(scoreType);
         }

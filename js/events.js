@@ -55,15 +55,25 @@ class ByronicEvent
 {
     applyEvent(eventType, eventId, player) {
         const effects = EVENTS[eventType][eventId];
-        player.scandal += effects.scandal;
-        player.masterpiece += effects.masterpiece;
-        player.stress += effects.stress;
-        // make a message for the effects that we've applied to the player
-        const message = `${effects.message} \n\nEffects:\nScandal: ${player.scandal} (${effects.scandal >= 0 ? '+' : ''}${effects.scandal})\n` +
-        `Masterpiece: ${player.masterpiece} (${effects.masterpiece >= 0 ? '+' : ''}${effects.masterpiece})\n` +
-        `Stress: ${player.stress} (${effects.stress >= 0 ? '+' : ''}${effects.stress})`;
+        player.editProperty('scandal', effects.scandal, player.maxScandal, Scores.Scandal);
+        player.editProperty('masterpiece', effects.masterpiece, player.maxMasterpiece, Scores.Masterpiece);
+        player.editProperty('stress', effects.stress, player.maxStress, Scores.Stress);
+        // make a nice message for each event
+        const message = `${effects.message} <br><br><strong>Effects:</strong><br>` +
+                        `Scandal: ${player.scandal} (${effects.scandal >= 0 ? '+' : ''}${effects.scandal})<br>` +
+                        `Masterpiece: ${player.masterpiece} (${effects.masterpiece >= 0 ? '+' : ''}${effects.masterpiece})<br>` +
+                        `Stress: ${player.stress} (${effects.stress >= 0 ? '+' : ''}${effects.stress})`;
 
-        console.log(message);
+        document.getElementById('log').innerHTML += `<p>${message}</p>`;
+        this.updateStats(player);
+    }
+    updateStats(player) {
+        document.getElementById('scandal').textContent = `Scandal: ${player.scandal}`;
+        document.getElementById('masterpiece').textContent = `Masterpiece: ${player.masterpiece}`;
+        document.getElementById('stress').textContent = `Stress: ${player.stress}`;
     }
 }
+window.ByronicEvent = ByronicEvent;
+window.EVENTS = EVENTS;
+console.log('EVENTS loaded:', window.EVENTS);
 
