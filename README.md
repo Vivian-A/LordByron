@@ -4,4 +4,8 @@ A digital implementation of the “one-page RPG” that took the niche one page 
 
 You can play by clicking [here](https://vivian-a.github.io/LordByron).
 
+
 [Check out the original here](https://x.com/Sotherans/status/1507670651724873730/photo/1)
+
+
+Why did I make this? Honestly, I just wanted to do a project I could finish in a few hours. I saw the tweet and it made me laugh, and I figured it'd be easy enough to make a digital version. 
